@@ -7,9 +7,27 @@
 ```bash
 make new NAME=my-skill
 make validate
+make install NAME=my-skill
 ```
 
 创建后，编辑 `skills/my-skill/SKILL.md`，删除无用说明，并只在确有需要时添加 `scripts/`、`references/` 或 `assets/`。
+
+## 安装到 skills.sh 目录
+
+默认将 skill 以符号链接安装到 `~/.agents/skills`，仓库仍是唯一内容来源：
+
+```bash
+# 安装一个 skill
+make install NAME=ask
+
+# 安装仓库中的全部 skills
+make install-all
+
+# 为其他 agent 或自定义环境指定安装目录
+make install NAME=ask SKILLS_HOME="$HOME/.codex/skills"
+```
+
+安装不会覆盖同名目录或指向其他来源的符号链接；请先自行处理冲突，再重新执行命令。
 
 ## 目录结构
 
@@ -37,4 +55,3 @@ make validate
 - 默认允许自动发现；只有明确需要仅显式调用时，才在 `agents/openai.yaml` 中关闭隐式调用。
 
 更完整的新增、修改和评审要求见 [CONTRIBUTING.md](CONTRIBUTING.md)。
-

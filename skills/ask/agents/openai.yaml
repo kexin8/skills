@@ -1,0 +1,7 @@
+interface:
+  display_name: "Ask"
+  short_description: "Clarify a request one question at a time"
+  default_prompt: "Use $ask to clarify my request one question at a time, then complete it."
+
+policy:
+  allow_implicit_invocation: false
