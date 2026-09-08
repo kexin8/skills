@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Notes"
+  short_description: "Record and maintain durable engineering decisions"
+  default_prompt: "Use $agent-notes to decide whether this change needs an Agent Note and keep its lifecycle synchronized with the implementation."
